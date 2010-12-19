@@ -6,3 +6,11 @@ D:\work\VolonteersPortal\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.pdb
 D:\work\VolonteersPortal\VolonteersPortal.Tests\obj\Debug\ResolveAssemblyReference.cache
 D:\work\VolonteersPortal\VolonteersPortal.Tests\obj\Debug\VolonteersPortal.Tests.dll
 D:\work\VolonteersPortal\VolonteersPortal.Tests\obj\Debug\VolonteersPortal.Tests.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\obj\Debug\VolonteersPortal.Tests.dll
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\obj\Debug\VolonteersPortal.Tests.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.dll.config
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.dll
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.dll
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.pdb
