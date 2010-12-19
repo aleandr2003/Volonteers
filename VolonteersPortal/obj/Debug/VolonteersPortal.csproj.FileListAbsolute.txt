@@ -1,0 +1,5 @@
+D:\work\VolonteersPortal\VolonteersPortal\bin\VolonteersPortal.dll
+D:\work\VolonteersPortal\VolonteersPortal\bin\VolonteersPortal.pdb
+D:\work\VolonteersPortal\VolonteersPortal\obj\Debug\ResolveAssemblyReference.cache
+D:\work\VolonteersPortal\VolonteersPortal\obj\Debug\VolonteersPortal.dll
+D:\work\VolonteersPortal\VolonteersPortal\obj\Debug\VolonteersPortal.pdb

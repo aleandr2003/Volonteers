@@ -1,0 +1,8 @@
+D:\work\VolonteersPortal\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.dll.config
+D:\work\VolonteersPortal\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.dll
+D:\work\VolonteersPortal\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.pdb
+D:\work\VolonteersPortal\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.dll
+D:\work\VolonteersPortal\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.pdb
+D:\work\VolonteersPortal\VolonteersPortal.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\work\VolonteersPortal\VolonteersPortal.Tests\obj\Debug\VolonteersPortal.Tests.dll
+D:\work\VolonteersPortal\VolonteersPortal.Tests\obj\Debug\VolonteersPortal.Tests.pdb
