@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Model.Abstract
 {
-    interface IVacancy
+    public interface IVacancy
     {
         int Id {get; set;}
         string Name {get; set;}

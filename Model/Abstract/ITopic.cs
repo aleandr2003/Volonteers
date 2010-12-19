@@ -12,7 +12,7 @@ namespace Model.Abstract
         int ObjectId {get; set;} 
         string Title {get; set;}
         string Text {get; set;}
-        int PersonId { get; set; }
+        int AuthorId { get; set; }
         DateTime DateCreated { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace Model.Entities
 {
     public partial class Topic: ITopic
     {
+     
     }
 }

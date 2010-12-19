@@ -1,0 +1,6 @@
+C:\Users\александр\Volonteers\Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\александр\Volonteers\Model\bin\Debug\Model.dll.config
+C:\Users\александр\Volonteers\Model\bin\Debug\Model.dll
+C:\Users\александр\Volonteers\Model\bin\Debug\Model.pdb
+C:\Users\александр\Volonteers\Model\obj\Debug\Model.dll
+C:\Users\александр\Volonteers\Model\obj\Debug\Model.pdb

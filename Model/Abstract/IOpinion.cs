@@ -6,7 +6,7 @@ using Model.DataClasses;
 
 namespace Model.Abstract
 {
-    interface IOpinion
+    public interface IOpinion
     {
         int Id {get; set;}
         int ObjectPersonId {get; set;}

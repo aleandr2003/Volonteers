@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Model.DataClasses;
+using Model.Entities;
 
 namespace Model.Abstract
 {
@@ -14,7 +15,7 @@ namespace Model.Abstract
         IProject GetProjectDetails(int Id);
         
         List<PersonProjectRole> GetProjectRoleList(int PersonId);
-        void UpdateProject(IProject project);
+        void UpdateProject(Project project);
 
     }
 }
