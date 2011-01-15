@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Model.Properties {
+namespace Models.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

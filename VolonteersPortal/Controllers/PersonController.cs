@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Models.Abstract;
+using VolonteersPortal.Models;
+using Models.Entities;
+
 
 namespace VolonteersPortal.Controllers
 {
     public class PersonController : Controller
     {
+        public IPersonRepository personRepository;
+
+        public PersonController(IPersonRepository personRep)
+        {
+            personRepository = personRep;
+        }
         //
         // GET: /Person/
-
         public ActionResult Index()
         {
             return View();
@@ -18,51 +27,24 @@ namespace VolonteersPortal.Controllers
 
         //
         // GET: /Person/Details/5
-
-        public ActionResult Details(int id)
+        public ActionResult Details(string nickname)
         {
-            return View();
+            Person person = personRepository.GetPerson(nickname);
+
+            return View(new ProfileModel {person = person });
         }
-
-        //
-        // GET: /Person/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        } 
-
-        //
-        // POST: /Person/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-        
+    
         //
         // GET: /Person/Edit/5
- 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string nickname)
         {
             return View();
         }
 
         //
         // POST: /Person/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(string nickname, FormCollection collection)
         {
             try
             {
@@ -78,17 +60,15 @@ namespace VolonteersPortal.Controllers
 
         //
         // GET: /Person/EditAvatar/5
-
-        public ActionResult EditAvatar(int id)
+        public ActionResult EditAvatar(string nickname)
         {
             return View();
         }
 
         //
         // POST: /Person/EditAvatar/5
-
         [HttpPost]
-        public ActionResult EditAvatar(int id, FormCollection collection)
+        public ActionResult EditAvatar(string nickname, FormCollection collection)
         {
             try
             {
@@ -102,21 +82,17 @@ namespace VolonteersPortal.Controllers
             }
         }
 
-
-
         //
         // GET: /Person/Delete/5
- 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string nickname)
         {
             return View();
         }
 
         //
         // POST: /Person/Delete/5
-
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string nickname, FormCollection collection)
         {
             try
             {

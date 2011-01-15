@@ -8,3 +8,11 @@ C:\Users\александр\Volonteers\VolonteersPortal\bin\VolonteersPortal.pdb
 C:\Users\александр\Volonteers\VolonteersPortal\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\александр\Volonteers\VolonteersPortal\obj\Debug\VolonteersPortal.dll
 C:\Users\александр\Volonteers\VolonteersPortal\obj\Debug\VolonteersPortal.pdb
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Model.dll
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Model.pdb
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Castle.Core.dll
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Castle.Windsor.dll
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Castle.Windsor.pdb
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Castle.Windsor.xml
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Castle.Core.pdb
+C:\Users\александр\Volonteers\VolonteersPortal\bin\Castle.Core.xml

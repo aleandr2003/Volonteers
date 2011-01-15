@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Model.Entities
+namespace Models.Entities
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -30,12 +30,6 @@ namespace Model.Entities
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertPerson(Person instance);
-    partial void UpdatePerson(Person instance);
-    partial void DeletePerson(Person instance);
-    partial void InsertProject(Project instance);
-    partial void UpdateProject(Project instance);
-    partial void DeleteProject(Project instance);
     partial void InsertVacancy(Vacancy instance);
     partial void UpdateVacancy(Vacancy instance);
     partial void DeleteVacancy(Vacancy instance);
@@ -51,10 +45,16 @@ namespace Model.Entities
     partial void InsertComment(Comment instance);
     partial void UpdateComment(Comment instance);
     partial void DeleteComment(Comment instance);
+    partial void InsertPerson(Person instance);
+    partial void UpdatePerson(Person instance);
+    partial void DeletePerson(Person instance);
+    partial void InsertProject(Project instance);
+    partial void UpdateProject(Project instance);
+    partial void DeleteProject(Project instance);
     #endregion
 		
 		public VolonteersDataContext() : 
-				base(global::Model.Properties.Settings.Default.VolonteersConnectionString, mappingSource)
+				base(global::Models.Properties.Settings.Default.VolonteersConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -81,22 +81,6 @@ namespace Model.Entities
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Person> Persons
-		{
-			get
-			{
-				return this.GetTable<Person>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Project> Projects
-		{
-			get
-			{
-				return this.GetTable<Project>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Vacancy> Vacancies
@@ -138,661 +122,21 @@ namespace Model.Entities
 				return this.GetTable<Comment>();
 			}
 		}
-	}
-	
-	[Table(Name="dbo.Persons")]
-	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _NickName;
-		
-		private string _FirstName;
-		
-		private string _LastName;
-		
-		private string _ICQNumber;
-		
-		private string _Email;
-		
-		private string _PhoneNumber1;
-		
-		private string _PhoneNumber2;
-		
-		private string _Hobbies;
-		
-		private string _Skills;
-		
-		private string _Password;
-		
-		private EntitySet<Opinion> _Opinions;
-		
-		private EntitySet<Opinion> _Opinions1;
-		
-		private EntitySet<Topic> _Topics;
-		
-		private EntitySet<Message> _Messages;
-		
-		private EntitySet<Message> _Messages1;
-		
-		private EntitySet<Comment> _Comments;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNickNameChanging(string value);
-    partial void OnNickNameChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
-    partial void OnICQNumberChanging(string value);
-    partial void OnICQNumberChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnPhoneNumber1Changing(string value);
-    partial void OnPhoneNumber1Changed();
-    partial void OnPhoneNumber2Changing(string value);
-    partial void OnPhoneNumber2Changed();
-    partial void OnHobbiesChanging(string value);
-    partial void OnHobbiesChanged();
-    partial void OnSkillsChanging(string value);
-    partial void OnSkillsChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    #endregion
-		
-		public Person()
-		{
-			this._Opinions = new EntitySet<Opinion>(new Action<Opinion>(this.attach_Opinions), new Action<Opinion>(this.detach_Opinions));
-			this._Opinions1 = new EntitySet<Opinion>(new Action<Opinion>(this.attach_Opinions1), new Action<Opinion>(this.detach_Opinions1));
-			this._Topics = new EntitySet<Topic>(new Action<Topic>(this.attach_Topics), new Action<Topic>(this.detach_Topics));
-			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
-			this._Messages1 = new EntitySet<Message>(new Action<Message>(this.attach_Messages1), new Action<Message>(this.detach_Messages1));
-			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
-			OnCreated();
-		}
-		
-		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		public System.Data.Linq.Table<Person> Persons
 		{
 			get
 			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
+				return this.GetTable<Person>();
 			}
 		}
 		
-		[Column(Storage="_NickName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string NickName
+		public System.Data.Linq.Table<Project> Projects
 		{
 			get
 			{
-				return this._NickName;
+				return this.GetTable<Project>();
 			}
-			set
-			{
-				if ((this._NickName != value))
-				{
-					this.OnNickNameChanging(value);
-					this.SendPropertyChanging();
-					this._NickName = value;
-					this.SendPropertyChanged("NickName");
-					this.OnNickNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_FirstName", DbType="VarChar(50)")]
-		public string FirstName
-		{
-			get
-			{
-				return this._FirstName;
-			}
-			set
-			{
-				if ((this._FirstName != value))
-				{
-					this.OnFirstNameChanging(value);
-					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_LastName", DbType="VarChar(50)")]
-		public string LastName
-		{
-			get
-			{
-				return this._LastName;
-			}
-			set
-			{
-				if ((this._LastName != value))
-				{
-					this.OnLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ICQNumber", DbType="VarChar(20)")]
-		public string ICQNumber
-		{
-			get
-			{
-				return this._ICQNumber;
-			}
-			set
-			{
-				if ((this._ICQNumber != value))
-				{
-					this.OnICQNumberChanging(value);
-					this.SendPropertyChanging();
-					this._ICQNumber = value;
-					this.SendPropertyChanged("ICQNumber");
-					this.OnICQNumberChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_PhoneNumber1", DbType="VarChar(20)")]
-		public string PhoneNumber1
-		{
-			get
-			{
-				return this._PhoneNumber1;
-			}
-			set
-			{
-				if ((this._PhoneNumber1 != value))
-				{
-					this.OnPhoneNumber1Changing(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber1 = value;
-					this.SendPropertyChanged("PhoneNumber1");
-					this.OnPhoneNumber1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_PhoneNumber2", DbType="VarChar(20)")]
-		public string PhoneNumber2
-		{
-			get
-			{
-				return this._PhoneNumber2;
-			}
-			set
-			{
-				if ((this._PhoneNumber2 != value))
-				{
-					this.OnPhoneNumber2Changing(value);
-					this.SendPropertyChanging();
-					this._PhoneNumber2 = value;
-					this.SendPropertyChanged("PhoneNumber2");
-					this.OnPhoneNumber2Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_Hobbies", DbType="VarChar(500)")]
-		public string Hobbies
-		{
-			get
-			{
-				return this._Hobbies;
-			}
-			set
-			{
-				if ((this._Hobbies != value))
-				{
-					this.OnHobbiesChanging(value);
-					this.SendPropertyChanging();
-					this._Hobbies = value;
-					this.SendPropertyChanged("Hobbies");
-					this.OnHobbiesChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Skills", DbType="VarChar(500)")]
-		public string Skills
-		{
-			get
-			{
-				return this._Skills;
-			}
-			set
-			{
-				if ((this._Skills != value))
-				{
-					this.OnSkillsChanging(value);
-					this.SendPropertyChanging();
-					this._Skills = value;
-					this.SendPropertyChanged("Skills");
-					this.OnSkillsChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Password", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[Association(Name="Person_Opinion", Storage="_Opinions", ThisKey="Id", OtherKey="AuthorId")]
-		public EntitySet<Opinion> Opinions
-		{
-			get
-			{
-				return this._Opinions;
-			}
-			set
-			{
-				this._Opinions.Assign(value);
-			}
-		}
-		
-		[Association(Name="Person_Opinion1", Storage="_Opinions1", ThisKey="Id", OtherKey="ObjectPersonId")]
-		public EntitySet<Opinion> Opinions1
-		{
-			get
-			{
-				return this._Opinions1;
-			}
-			set
-			{
-				this._Opinions1.Assign(value);
-			}
-		}
-		
-		[Association(Name="Person_Topic", Storage="_Topics", ThisKey="Id", OtherKey="AuthorId")]
-		public EntitySet<Topic> Topics
-		{
-			get
-			{
-				return this._Topics;
-			}
-			set
-			{
-				this._Topics.Assign(value);
-			}
-		}
-		
-		[Association(Name="Person_Message", Storage="_Messages", ThisKey="Id", OtherKey="AuthorId")]
-		public EntitySet<Message> Messages
-		{
-			get
-			{
-				return this._Messages;
-			}
-			set
-			{
-				this._Messages.Assign(value);
-			}
-		}
-		
-		[Association(Name="Person_Message1", Storage="_Messages1", ThisKey="Id", OtherKey="RecipientId")]
-		public EntitySet<Message> Messages1
-		{
-			get
-			{
-				return this._Messages1;
-			}
-			set
-			{
-				this._Messages1.Assign(value);
-			}
-		}
-		
-		[Association(Name="Person_Comment", Storage="_Comments", ThisKey="Id", OtherKey="AuthorId")]
-		public EntitySet<Comment> Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				this._Comments.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Opinions(Opinion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Opinions(Opinion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-		
-		private void attach_Opinions1(Opinion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person1 = this;
-		}
-		
-		private void detach_Opinions1(Opinion entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person1 = null;
-		}
-		
-		private void attach_Topics(Topic entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Topics(Topic entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-		
-		private void attach_Messages(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Messages(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-		
-		private void attach_Messages1(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person1 = this;
-		}
-		
-		private void detach_Messages1(Message entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person1 = null;
-		}
-		
-		private void attach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = this;
-		}
-		
-		private void detach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Person = null;
-		}
-	}
-	
-	[Table(Name="dbo.Projects")]
-	public partial class Project : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Name;
-		
-		private string _Motto;
-		
-		private int _OwnerPersonId;
-		
-		private string _Description;
-		
-		private EntitySet<Vacancy> _Vacancies;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnMottoChanging(string value);
-    partial void OnMottoChanged();
-    partial void OnOwnerPersonIdChanging(int value);
-    partial void OnOwnerPersonIdChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    #endregion
-		
-		public Project()
-		{
-			this._Vacancies = new EntitySet<Vacancy>(new Action<Vacancy>(this.attach_Vacancies), new Action<Vacancy>(this.detach_Vacancies));
-			OnCreated();
-		}
-		
-		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Name", DbType="VarChar(100)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Motto", DbType="VarChar(140)")]
-		public string Motto
-		{
-			get
-			{
-				return this._Motto;
-			}
-			set
-			{
-				if ((this._Motto != value))
-				{
-					this.OnMottoChanging(value);
-					this.SendPropertyChanging();
-					this._Motto = value;
-					this.SendPropertyChanged("Motto");
-					this.OnMottoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_OwnerPersonId", DbType="Int NOT NULL")]
-		public int OwnerPersonId
-		{
-			get
-			{
-				return this._OwnerPersonId;
-			}
-			set
-			{
-				if ((this._OwnerPersonId != value))
-				{
-					this.OnOwnerPersonIdChanging(value);
-					this.SendPropertyChanging();
-					this._OwnerPersonId = value;
-					this.SendPropertyChanged("OwnerPersonId");
-					this.OnOwnerPersonIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Description", DbType="VarChar(1000)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[Association(Name="Project_Vacancy", Storage="_Vacancies", ThisKey="Id", OtherKey="ProjectId")]
-		public EntitySet<Vacancy> Vacancies
-		{
-			get
-			{
-				return this._Vacancies;
-			}
-			set
-			{
-				this._Vacancies.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Vacancies(Vacancy entity)
-		{
-			this.SendPropertyChanging();
-			entity.Project = this;
-		}
-		
-		private void detach_Vacancies(Vacancy entity)
-		{
-			this.SendPropertyChanging();
-			entity.Project = null;
 		}
 	}
 	
@@ -1766,9 +1110,9 @@ namespace Model.Entities
 		
 		private System.DateTime _DateCreated;
 		
-		private EntityRef<Person> _Person;
-		
 		private EntityRef<Topic> _Topic;
+		
+		private EntityRef<Person> _Person;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1788,8 +1132,8 @@ namespace Model.Entities
 		
 		public Comment()
 		{
-			this._Person = default(EntityRef<Person>);
 			this._Topic = default(EntityRef<Topic>);
+			this._Person = default(EntityRef<Person>);
 			OnCreated();
 		}
 		
@@ -1901,40 +1245,6 @@ namespace Model.Entities
 			}
 		}
 		
-		[Association(Name="Person_Comment", Storage="_Person", ThisKey="AuthorId", OtherKey="Id", IsForeignKey=true)]
-		public Person Person
-		{
-			get
-			{
-				return this._Person.Entity;
-			}
-			set
-			{
-				Person previousValue = this._Person.Entity;
-				if (((previousValue != value) 
-							|| (this._Person.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Person.Entity = null;
-						previousValue.Comments.Remove(this);
-					}
-					this._Person.Entity = value;
-					if ((value != null))
-					{
-						value.Comments.Add(this);
-						this._AuthorId = value.Id;
-					}
-					else
-					{
-						this._AuthorId = default(int);
-					}
-					this.SendPropertyChanged("Person");
-				}
-			}
-		}
-		
 		[Association(Name="Topic_Comment", Storage="_Topic", ThisKey="TopicId", OtherKey="Id", IsForeignKey=true)]
 		public Topic Topic
 		{
@@ -1969,6 +1279,40 @@ namespace Model.Entities
 			}
 		}
 		
+		[Association(Name="Person_Comment", Storage="_Person", ThisKey="AuthorId", OtherKey="Id", IsForeignKey=true)]
+		public Person Person
+		{
+			get
+			{
+				return this._Person.Entity;
+			}
+			set
+			{
+				Person previousValue = this._Person.Entity;
+				if (((previousValue != value) 
+							|| (this._Person.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Person.Entity = null;
+						previousValue.Comments.Remove(this);
+					}
+					this._Person.Entity = value;
+					if ((value != null))
+					{
+						value.Comments.Add(this);
+						this._AuthorId = value.Id;
+					}
+					else
+					{
+						this._AuthorId = default(int);
+					}
+					this.SendPropertyChanged("Person");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1987,6 +1331,662 @@ namespace Model.Entities
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[Table(Name="dbo.Persons")]
+	public partial class Person : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _NickName;
+		
+		private string _FirstName;
+		
+		private string _LastName;
+		
+		private string _ICQNumber;
+		
+		private string _Email;
+		
+		private string _PhoneNumber1;
+		
+		private string _PhoneNumber2;
+		
+		private string _Hobbies;
+		
+		private string _Skills;
+		
+		private EntitySet<Opinion> _Opinions;
+		
+		private EntitySet<Opinion> _Opinions1;
+		
+		private EntitySet<Topic> _Topics;
+		
+		private EntitySet<Message> _Messages;
+		
+		private EntitySet<Message> _Messages1;
+		
+		private EntitySet<Comment> _Comments;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNickNameChanging(string value);
+    partial void OnNickNameChanged();
+    partial void OnFirstNameChanging(string value);
+    partial void OnFirstNameChanged();
+    partial void OnLastNameChanging(string value);
+    partial void OnLastNameChanged();
+    partial void OnICQNumberChanging(string value);
+    partial void OnICQNumberChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnPhoneNumber1Changing(string value);
+    partial void OnPhoneNumber1Changed();
+    partial void OnPhoneNumber2Changing(string value);
+    partial void OnPhoneNumber2Changed();
+    partial void OnHobbiesChanging(string value);
+    partial void OnHobbiesChanged();
+    partial void OnSkillsChanging(string value);
+    partial void OnSkillsChanged();
+    #endregion
+		
+		public Person()
+		{
+			this._Opinions = new EntitySet<Opinion>(new Action<Opinion>(this.attach_Opinions), new Action<Opinion>(this.detach_Opinions));
+			this._Opinions1 = new EntitySet<Opinion>(new Action<Opinion>(this.attach_Opinions1), new Action<Opinion>(this.detach_Opinions1));
+			this._Topics = new EntitySet<Topic>(new Action<Topic>(this.attach_Topics), new Action<Topic>(this.detach_Topics));
+			this._Messages = new EntitySet<Message>(new Action<Message>(this.attach_Messages), new Action<Message>(this.detach_Messages));
+			this._Messages1 = new EntitySet<Message>(new Action<Message>(this.attach_Messages1), new Action<Message>(this.detach_Messages1));
+			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
+			OnCreated();
+		}
+		
+		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_NickName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NickName
+		{
+			get
+			{
+				return this._NickName;
+			}
+			set
+			{
+				if ((this._NickName != value))
+				{
+					this.OnNickNameChanging(value);
+					this.SendPropertyChanging();
+					this._NickName = value;
+					this.SendPropertyChanged("NickName");
+					this.OnNickNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_FirstName", DbType="VarChar(50)")]
+		public string FirstName
+		{
+			get
+			{
+				return this._FirstName;
+			}
+			set
+			{
+				if ((this._FirstName != value))
+				{
+					this.OnFirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._FirstName = value;
+					this.SendPropertyChanged("FirstName");
+					this.OnFirstNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_LastName", DbType="VarChar(50)")]
+		public string LastName
+		{
+			get
+			{
+				return this._LastName;
+			}
+			set
+			{
+				if ((this._LastName != value))
+				{
+					this.OnLastNameChanging(value);
+					this.SendPropertyChanging();
+					this._LastName = value;
+					this.SendPropertyChanged("LastName");
+					this.OnLastNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ICQNumber", DbType="VarChar(20)")]
+		public string ICQNumber
+		{
+			get
+			{
+				return this._ICQNumber;
+			}
+			set
+			{
+				if ((this._ICQNumber != value))
+				{
+					this.OnICQNumberChanging(value);
+					this.SendPropertyChanging();
+					this._ICQNumber = value;
+					this.SendPropertyChanged("ICQNumber");
+					this.OnICQNumberChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PhoneNumber1", DbType="VarChar(20)")]
+		public string PhoneNumber1
+		{
+			get
+			{
+				return this._PhoneNumber1;
+			}
+			set
+			{
+				if ((this._PhoneNumber1 != value))
+				{
+					this.OnPhoneNumber1Changing(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber1 = value;
+					this.SendPropertyChanged("PhoneNumber1");
+					this.OnPhoneNumber1Changed();
+				}
+			}
+		}
+		
+		[Column(Storage="_PhoneNumber2", DbType="VarChar(20)")]
+		public string PhoneNumber2
+		{
+			get
+			{
+				return this._PhoneNumber2;
+			}
+			set
+			{
+				if ((this._PhoneNumber2 != value))
+				{
+					this.OnPhoneNumber2Changing(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber2 = value;
+					this.SendPropertyChanged("PhoneNumber2");
+					this.OnPhoneNumber2Changed();
+				}
+			}
+		}
+		
+		[Column(Storage="_Hobbies", DbType="VarChar(500)")]
+		public string Hobbies
+		{
+			get
+			{
+				return this._Hobbies;
+			}
+			set
+			{
+				if ((this._Hobbies != value))
+				{
+					this.OnHobbiesChanging(value);
+					this.SendPropertyChanging();
+					this._Hobbies = value;
+					this.SendPropertyChanged("Hobbies");
+					this.OnHobbiesChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Skills", DbType="VarChar(500)")]
+		public string Skills
+		{
+			get
+			{
+				return this._Skills;
+			}
+			set
+			{
+				if ((this._Skills != value))
+				{
+					this.OnSkillsChanging(value);
+					this.SendPropertyChanging();
+					this._Skills = value;
+					this.SendPropertyChanged("Skills");
+					this.OnSkillsChanged();
+				}
+			}
+		}
+		
+		[Association(Name="Person_Opinion", Storage="_Opinions", ThisKey="Id", OtherKey="AuthorId")]
+		public EntitySet<Opinion> Opinions
+		{
+			get
+			{
+				return this._Opinions;
+			}
+			set
+			{
+				this._Opinions.Assign(value);
+			}
+		}
+		
+		[Association(Name="Person_Opinion1", Storage="_Opinions1", ThisKey="Id", OtherKey="ObjectPersonId")]
+		public EntitySet<Opinion> Opinions1
+		{
+			get
+			{
+				return this._Opinions1;
+			}
+			set
+			{
+				this._Opinions1.Assign(value);
+			}
+		}
+		
+		[Association(Name="Person_Topic", Storage="_Topics", ThisKey="Id", OtherKey="AuthorId")]
+		public EntitySet<Topic> Topics
+		{
+			get
+			{
+				return this._Topics;
+			}
+			set
+			{
+				this._Topics.Assign(value);
+			}
+		}
+		
+		[Association(Name="Person_Message", Storage="_Messages", ThisKey="Id", OtherKey="AuthorId")]
+		public EntitySet<Message> Messages
+		{
+			get
+			{
+				return this._Messages;
+			}
+			set
+			{
+				this._Messages.Assign(value);
+			}
+		}
+		
+		[Association(Name="Person_Message1", Storage="_Messages1", ThisKey="Id", OtherKey="RecipientId")]
+		public EntitySet<Message> Messages1
+		{
+			get
+			{
+				return this._Messages1;
+			}
+			set
+			{
+				this._Messages1.Assign(value);
+			}
+		}
+		
+		[Association(Name="Person_Comment", Storage="_Comments", ThisKey="Id", OtherKey="AuthorId")]
+		public EntitySet<Comment> Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				this._Comments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Opinions(Opinion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Opinions(Opinion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+		
+		private void attach_Opinions1(Opinion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person1 = this;
+		}
+		
+		private void detach_Opinions1(Opinion entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person1 = null;
+		}
+		
+		private void attach_Topics(Topic entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Topics(Topic entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+		
+		private void attach_Messages(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Messages(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+		
+		private void attach_Messages1(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person1 = this;
+		}
+		
+		private void detach_Messages1(Message entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person1 = null;
+		}
+		
+		private void attach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = this;
+		}
+		
+		private void detach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Person = null;
+		}
+	}
+	
+	[Table(Name="dbo.Projects")]
+	public partial class Project : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private string _Motto;
+		
+		private int _OwnerPersonId;
+		
+		private string _Description;
+		
+		private System.DateTime _Date;
+		
+		private EntitySet<Vacancy> _Vacancies;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnMottoChanging(string value);
+    partial void OnMottoChanged();
+    partial void OnOwnerPersonIdChanging(int value);
+    partial void OnOwnerPersonIdChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    #endregion
+		
+		public Project()
+		{
+			this._Vacancies = new EntitySet<Vacancy>(new Action<Vacancy>(this.attach_Vacancies), new Action<Vacancy>(this.detach_Vacancies));
+			OnCreated();
+		}
+		
+		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Name", DbType="VarChar(100)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Motto", DbType="VarChar(140)")]
+		public string Motto
+		{
+			get
+			{
+				return this._Motto;
+			}
+			set
+			{
+				if ((this._Motto != value))
+				{
+					this.OnMottoChanging(value);
+					this.SendPropertyChanging();
+					this._Motto = value;
+					this.SendPropertyChanged("Motto");
+					this.OnMottoChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_OwnerPersonId", DbType="Int NOT NULL")]
+		public int OwnerPersonId
+		{
+			get
+			{
+				return this._OwnerPersonId;
+			}
+			set
+			{
+				if ((this._OwnerPersonId != value))
+				{
+					this.OnOwnerPersonIdChanging(value);
+					this.SendPropertyChanging();
+					this._OwnerPersonId = value;
+					this.SendPropertyChanged("OwnerPersonId");
+					this.OnOwnerPersonIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="VarChar(1000)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Date", DbType="DateTime NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[Association(Name="Project_Vacancy", Storage="_Vacancies", ThisKey="Id", OtherKey="ProjectId")]
+		public EntitySet<Vacancy> Vacancies
+		{
+			get
+			{
+				return this._Vacancies;
+			}
+			set
+			{
+				this._Vacancies.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Vacancies(Vacancy entity)
+		{
+			this.SendPropertyChanging();
+			entity.Project = this;
+		}
+		
+		private void detach_Vacancies(Vacancy entity)
+		{
+			this.SendPropertyChanging();
+			entity.Project = null;
 		}
 	}
 }

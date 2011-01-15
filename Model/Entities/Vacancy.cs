@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.Abstract;
+using Models.Abstract;
 
-namespace Model.Entities
+namespace Models.Entities
 {
     public partial class Vacancy: IVacancy
     {

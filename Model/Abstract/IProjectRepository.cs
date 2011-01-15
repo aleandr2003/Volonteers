@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.DataClasses;
-using Model.Entities;
+using Models.DataClasses;
+using Models.Entities;
 
-namespace Model.Abstract
+namespace Models.Abstract
 {
-    interface IProjectRepository
+    public interface IProjectRepository
     {
-        IProject GetProject(int Id);
+        Project GetProject(int Id);
         
         // Отдает проект с заполненными спиками Vacancies, Images
-        IProject GetProjectDetails(int Id);
+        Project GetProjectDetails(int Id);
         
         List<PersonProjectRole> GetProjectRoleList(int PersonId);
         void UpdateProject(Project project);

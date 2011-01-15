@@ -2,28 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.Entities;
-using Model.Abstract;
+using Models.Entities;
+using Models.Abstract;
 
-namespace Model.Repositories
+namespace Models.Repositories
 {
     public class PersonRepository: Repository, IPersonRepository
     {
         #region IPersonRepository Members
 
-        IPerson IPersonRepository.GetPerson(int Id)
+        public Person GetPerson(int Id)
         {
-            throw new NotImplementedException();
+            return context.Persons.Where(p => p.Id == Id).FirstOrDefault();
         }
 
-        IPerson IPersonRepository.GetPersonDetails(int Id)
+        public Person GetPersonDetails(int Id)
         {
-            throw new NotImplementedException();
+            return context.Persons.Where(p => p.Id == Id).FirstOrDefault();
+            //добавить заполнение Opinions.
+        }
+
+        public Person GetPerson(string Name)
+        {
+            return context.Persons.Where(p => p.NickName == Name).FirstOrDefault();
+        }
+
+        public Person GetPersonDetails(string Name)
+        {
+            return context.Persons.Where(p => p.NickName == Name).FirstOrDefault();
+            //добавить заполнение Opinions.
         }
 
         public void UpdatePerson(Person person)
         {
             throw new NotImplementedException();
+        }
+        public void InsertPerson(Person person)
+        {
+            context.Persons.InsertOnSubmit(person);
+            context.SubmitChanges();
         }
 
         #endregion

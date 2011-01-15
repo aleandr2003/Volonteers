@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Model.Entities
+namespace Models.Entities
 {
     public partial class Image
     {

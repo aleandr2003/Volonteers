@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.DataClasses;
+using Models.DataClasses;
 
-namespace Model.Abstract
+namespace Models.Abstract
 {
     interface IMessage
     {

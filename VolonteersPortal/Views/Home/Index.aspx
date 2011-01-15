@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
-
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<HomePageModel>" %>
+<%@ Import Namespace="Models.DataClasses" %>
+<%@ Import Namespace="VolonteersPortal.Models" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Home Page
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%= Html.Encode(ViewData["Message"]) %></h2>
-    <p>
-        To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-    </p>
+   <% Html.RenderPartial("ImmediateProjects", Model.ImmediateProjects);%> 
+   <% Html.RenderPartial("CompletedProjects", Model.CompletedProjects,
+          new ViewDataDictionary { { "CompletedProjectsNumber", Model.CompletedProjectsNumber } });%>
 </asp:Content>

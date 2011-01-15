@@ -8,7 +8,7 @@
     <ProjectGuid>{4594CC58-A0B3-4CAB-91B6-FFC8DBAFFB2D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Model</RootNamespace>
+    <RootNamespace>Models</RootNamespace>
     <AssemblyName>Model</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -61,6 +61,7 @@
     <Compile Include="Abstract\Repository.cs" />
     <Compile Include="DataClasses\PersonProjectRole.cs" />
     <Compile Include="DataClasses\PersonShortData.cs" />
+    <Compile Include="DataClasses\ProjectShortData.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\Image.cs" />
     <Compile Include="Entities\Message.cs" />

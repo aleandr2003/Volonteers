@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.Abstract;
+using Models.Abstract;
 
-namespace Model.Entities
+namespace Models.Entities
 {
     public partial class Message: IMessage
     {
@@ -35,7 +35,7 @@ namespace Model.Entities
             }
         }
 
-        public Model.DataClasses.PersonShortData AuthorData
+        public Models.DataClasses.PersonShortData AuthorData
         {
             get
             {
@@ -47,7 +47,7 @@ namespace Model.Entities
             }
         }
 
-        public Model.DataClasses.PersonShortData RecipientData
+        public Models.DataClasses.PersonShortData RecipientData
         {
             get
             {

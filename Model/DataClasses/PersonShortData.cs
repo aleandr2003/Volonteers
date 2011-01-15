@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Model.DataClasses
+namespace Models.DataClasses
 {
     public class PersonShortData
     {
-        int PersonId;
-        string FirstName;
-        string LastName;
-        int AvatarImageId;
+        public int PersonId;
+        public string FirstName;
+        public string LastName;
+        public int AvatarImageId;
     }
 }

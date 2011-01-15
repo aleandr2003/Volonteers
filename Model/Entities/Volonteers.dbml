@@ -1,37 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="Volonteers" Class="VolonteersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=АЛЕКСАНДР-ПК\SQLEXPRESS;Initial Catalog=Volonteers;Integrated Security=True" SettingsObjectName="Model.Properties.Settings" SettingsPropertyName="VolonteersConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Persons" Member="Persons">
-    <Type Name="Person">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NickName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ICQNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="PhoneNumber1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="PhoneNumber2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Hobbies" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Skills" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="Person_Opinion" Member="Opinions" ThisKey="Id" OtherKey="AuthorId" Type="Opinion" />
-      <Association Name="Person_Opinion1" Member="Opinions1" ThisKey="Id" OtherKey="ObjectPersonId" Type="Opinion" />
-      <Association Name="Person_Topic" Member="Topics" ThisKey="Id" OtherKey="AuthorId" Type="Topic" />
-      <Association Name="Person_Message" Member="Messages" ThisKey="Id" OtherKey="AuthorId" Type="Message" />
-      <Association Name="Person_Message1" Member="Messages1" ThisKey="Id" OtherKey="RecipientId" Type="Message" />
-      <Association Name="Person_Comment" Member="Comments" ThisKey="Id" OtherKey="AuthorId" Type="Comment" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Projects" Member="Projects">
-    <Type Name="Project">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Motto" Type="System.String" DbType="VarChar(140)" CanBeNull="true" />
-      <Column Name="OwnerPersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Association Name="Project_Vacancy" Member="Vacancies" ThisKey="Id" OtherKey="ProjectId" Type="Vacancy" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=АЛЕКСАНДР-ПК\SQLEXPRESS;Initial Catalog=Volonteers;Integrated Security=True" SettingsObjectName="Models.Properties.Settings" SettingsPropertyName="VolonteersConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Vacancy" Member="Vacancies">
     <Type Name="Vacancy">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -84,8 +53,39 @@
       <Column Name="Text" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
       <Column Name="AuthorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Person_Comment" Member="Person" ThisKey="AuthorId" OtherKey="Id" Type="Person" IsForeignKey="true" />
       <Association Name="Topic_Comment" Member="Topic" ThisKey="TopicId" OtherKey="Id" Type="Topic" IsForeignKey="true" />
+      <Association Name="Person_Comment" Member="Person" ThisKey="AuthorId" OtherKey="Id" Type="Person" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Persons" Member="Persons">
+    <Type Name="Person">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NickName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ICQNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PhoneNumber2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Hobbies" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Skills" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="Person_Opinion" Member="Opinions" ThisKey="Id" OtherKey="AuthorId" Type="Opinion" />
+      <Association Name="Person_Opinion1" Member="Opinions1" ThisKey="Id" OtherKey="ObjectPersonId" Type="Opinion" />
+      <Association Name="Person_Topic" Member="Topics" ThisKey="Id" OtherKey="AuthorId" Type="Topic" />
+      <Association Name="Person_Message" Member="Messages" ThisKey="Id" OtherKey="AuthorId" Type="Message" />
+      <Association Name="Person_Message1" Member="Messages1" ThisKey="Id" OtherKey="RecipientId" Type="Message" />
+      <Association Name="Person_Comment" Member="Comments" ThisKey="Id" OtherKey="AuthorId" Type="Comment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Projects" Member="Projects">
+    <Type Name="Project">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Motto" Type="System.String" DbType="VarChar(140)" CanBeNull="true" />
+      <Column Name="OwnerPersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Project_Vacancy" Member="Vacancies" ThisKey="Id" OtherKey="ProjectId" Type="Vacancy" />
     </Type>
   </Table>
 </Database>

@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.Entities;
+using Models.Entities;
 
-namespace Model.Abstract
+namespace Models.Abstract
 {
-    interface IPersonRepository
+    public interface IPersonRepository
     {
-        IPerson GetPerson(int Id);
+        Person GetPerson(int Id);
         //Отдает Person с заполненным списком Opinions
-        IPerson GetPersonDetails(int Id);
+        Person GetPersonDetails(int Id);
+        Person GetPerson(string Name);
+        Person GetPersonDetails(string Name);
         void UpdatePerson(Person person);
+        void InsertPerson(Person person);
+
     }
 }

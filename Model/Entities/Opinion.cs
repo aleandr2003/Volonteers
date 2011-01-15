@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.Abstract;
+using Models.Abstract;
 
-namespace Model.Entities
+namespace Models.Entities
 {
     public partial class Opinion: IOpinion
     {
         #region IOpinion Members
 
 
-        public Model.DataClasses.PersonShortData AuthorData
+        public Models.DataClasses.PersonShortData AuthorData
         {
             get
             {

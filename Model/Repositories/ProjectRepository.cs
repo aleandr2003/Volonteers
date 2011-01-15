@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Model.Abstract;
-using Model.Entities;
-using Model.DataClasses;
+using Models.Abstract;
+using Models.Entities;
+using Models.DataClasses;
 
-namespace Model.Repositories
+namespace Models.Repositories
 {
     public class ProjectRepository: Repository, IProjectRepository
     {
         #region Methods
-        public IProject GetProject(int Id)
+        public Project GetProject(int Id)
         {
-            throw new NotImplementedException();
+            return new Project { Id = Id};
         }
         // Отдает проект с заполненными спиками Vacancies, Images
-        public IProject GetProjectDetails(int Id)
+        public Project GetProjectDetails(int Id)
         {
             throw new NotImplementedException();
         }

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Models.Entities;
 
-namespace Model.Abstract
+namespace Models.Abstract
 {
     interface IMessageRepository
     {
    		//отдает Сообщение с заполненным полем Author
-   		IMessage GetMessage(int Id);
+   		Message GetMessage(int Id);
 
    		//отдает Сообщения с заполненными полями Author
-        List<IMessage> GetMessages(int PersonId, int skip, int take);
+        List<Message> GetMessages(int PersonId, int skip, int take);
    		int CountMessages(int PersonId);
         int CountNewMessages(int PersonId);
-   		void AddMessage(IMessage message);
+   		void AddMessage(Message message);
     }
 }

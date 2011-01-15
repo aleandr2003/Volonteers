@@ -14,3 +14,11 @@ C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Volontee
 C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.Tests.pdb
 C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.dll
 C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\VolonteersPortal.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Model.dll
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Model.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Castle.Core.dll
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Castle.Windsor.dll
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Castle.Core.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Castle.Core.xml
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Castle.Windsor.pdb
+C:\Users\александр\Volonteers\VolonteersPortal.Tests\bin\Debug\Castle.Windsor.xml

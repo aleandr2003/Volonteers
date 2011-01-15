@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using VolonteersPortal.Models;
+using Models.Abstract;
+using Models.Entities;
 
 namespace VolonteersPortal.Controllers
 {
@@ -15,9 +17,14 @@ namespace VolonteersPortal.Controllers
     [HandleError]
     public class AccountController : Controller
     {
-
+        private IPersonRepository personRepository;
         public IFormsAuthenticationService FormsService { get; set; }
         public IMembershipService MembershipService { get; set; }
+
+        public AccountController(IPersonRepository personRep)
+        {
+            personRepository = personRep;
+        }
 
         protected override void Initialize(RequestContext requestContext)
         {
@@ -50,7 +57,8 @@ namespace VolonteersPortal.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+
+                        return RedirectToAction("Details", "Person", new { nickname = model.UserName});
                     }
                 }
                 else
@@ -94,8 +102,11 @@ namespace VolonteersPortal.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+                    Person newPerson = new Person{ NickName = model.UserName, Email = model.Email};
+                    personRepository.InsertPerson(newPerson);
+
                     FormsService.SignIn(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Details", "Person", new { nickname = newPerson.NickName });
                 }
                 else
                 {
