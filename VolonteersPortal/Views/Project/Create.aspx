@@ -72,7 +72,7 @@
             <%= Html.ValidationMessageFor(m => m.Day)%>
         </div>
         <div class="editor-label">
-            <%= Html.LabelFor(m => m.Day) %>
+            <%= Html.LabelFor(m => m.Month) %>
         </div>
         <div class="editor-field">
             <%= Html.DropDownListFor(m => m.Month,
@@ -90,7 +90,31 @@
                     new SelectListItem{ Text = "Ноябрь", Value = "11"},
                     new SelectListItem{ Text = "Декабрь", Value = "12"}
             } )%>
-            <%= Html.ValidationMessageFor(m => m.Day)%>
+            <%= Html.ValidationMessageFor(m => m.Month)%>
+        </div>
+        <div class="editor-label">
+            <%= Html.LabelFor(m => m.Year) %>
+        </div>
+        <div class="editor-field">
+            <%= Html.DropDownListFor(m => m.Year,
+                new List<SelectListItem> {
+                    new SelectListItem{ Text = "2005", Value = "2005"},
+                    new SelectListItem{ Text = "2006", Value = "2006"},
+                    new SelectListItem{ Text = "2007", Value = "2007"},
+                    new SelectListItem{ Text = "2008", Value = "2008"},
+                    new SelectListItem{ Text = "2009", Value = "2009"},
+                    new SelectListItem{ Text = "2010", Value = "2010"},
+                    new SelectListItem{ Text = "2011", Value = "2011", Selected=true},
+                    new SelectListItem{ Text = "2012", Value = "2012"},
+                    new SelectListItem{ Text = "2013", Value = "2013"},
+                    new SelectListItem{ Text = "2014", Value = "2014"},
+                    new SelectListItem{ Text = "2015", Value = "2015"},
+                    new SelectListItem{ Text = "2016", Value = "2016"}
+            } )%>
+            <%= Html.ValidationMessageFor(m => m.Year)%>
+            <p>
+                <input type="submit" value="Создать" />
+            </p>
         </div>
         
     <% } %>

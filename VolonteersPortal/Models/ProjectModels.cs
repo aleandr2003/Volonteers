@@ -33,5 +33,20 @@ namespace VolonteersPortal.Models
         [DisplayName("Год")]
         public int Year { get; set; }
     }
+
+    public class ProjectDetailsModel
+    {
+        [DisplayName("Название")]
+        public string ProjectName { get; set; }
+
+        [DisplayName("Цель")]
+        public string Motto { get; set; }
+
+        [DisplayName("Описание")]
+        public string Description { get; set; }
+
+        [DisplayName("Дата")]
+        public DateTime Date { get; set; }
+    }
     #endregion
 }

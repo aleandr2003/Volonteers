@@ -13,7 +13,7 @@ namespace Models.Repositories
         #region Methods
         public Project GetProject(int Id)
         {
-            return new Project { Id = Id};
+            return context.Projects.Where(p => p.Id == Id).FirstOrDefault();
         }
         // Отдает проект с заполненными спиками Vacancies, Images
         public Project GetProjectDetails(int Id)
@@ -28,6 +28,13 @@ namespace Models.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void InsertProject(Project project)
+        {
+            context.Projects.InsertOnSubmit(project);
+            context.SubmitChanges();
+        }
+
         #endregion
 
     }

@@ -16,6 +16,7 @@ namespace Models.Abstract
         
         List<PersonProjectRole> GetProjectRoleList(int PersonId);
         void UpdateProject(Project project);
+        void InsertProject(Project project);
 
     }
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VolonteersPortal.Models;
+using Models.Abstract;
+using Models.Entities;
 
 namespace VolonteersPortal.Controllers
 {
@@ -10,6 +13,13 @@ namespace VolonteersPortal.Controllers
     {
         //
         // GET: /Project/
+
+        private IProjectRepository projectRepository;
+
+        public ProjectController(IProjectRepository projectRep)
+        {
+            projectRepository = projectRep;
+        }
 
         public ActionResult Index()
         {
@@ -21,7 +31,15 @@ namespace VolonteersPortal.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            Project targetProject = projectRepository.GetProject(id);
+            ProjectDetailsModel model = new ProjectDetailsModel
+            {
+                ProjectName = targetProject.Name,
+                Motto = targetProject.Motto,
+                Description = targetProject.Description,
+                Date = targetProject.Date
+            };
+            return View(model);
         }
 
         //
@@ -36,13 +54,25 @@ namespace VolonteersPortal.Controllers
         // POST: /Project/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CreateProjectModel model)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    DateTime ProjectDate = new DateTime(model.Year, model.Month, model.Day);
+                    Project newProject = new Project
+                        { 
+                            Name = model.ProjectName,
+                            Motto = model.Motto,
+                            Description = model.Description,
+                            Date = ProjectDate
+                        };
+                    projectRepository.InsertProject(newProject);
+                    return RedirectToAction("Details", new {Id = newProject.Id });
+                }
 
-                return RedirectToAction("Index");
+                return View(model);
             }
             catch
             {

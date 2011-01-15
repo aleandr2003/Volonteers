@@ -93,6 +93,7 @@
     <Content Include="Views\Home\SuggestProject.aspx" />
     <Content Include="Views\Person\Details.aspx" />
     <Content Include="Views\Project\Create.aspx" />
+    <Content Include="Views\Project\Details.aspx" />
     <Content Include="Views\Shared\CompletedProjects.ascx" />
     <Content Include="Views\Shared\ImmediateProjects.ascx" />
     <Content Include="Views\Shared\ProjectShort.ascx" />
