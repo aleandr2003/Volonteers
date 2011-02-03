@@ -37,7 +37,8 @@ namespace VolonteersPortal.Controllers
                 ProjectName = targetProject.Name,
                 Motto = targetProject.Motto,
                 Description = targetProject.Description,
-                Date = targetProject.Date
+                StartDate = targetProject.StartDate,
+                EndDate = targetProject.EndDate
             };
             return View(model);
         }
@@ -60,13 +61,13 @@ namespace VolonteersPortal.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    DateTime ProjectDate = new DateTime(model.Year, model.Month, model.Day);
                     Project newProject = new Project
                         { 
                             Name = model.ProjectName,
                             Motto = model.Motto,
                             Description = model.Description,
-                            Date = ProjectDate
+                            StartDate = model.StartDate,
+                            EndDate = model.EndDate
                         };
                     projectRepository.InsertProject(newProject);
                     return RedirectToAction("Details", new {Id = newProject.Id });

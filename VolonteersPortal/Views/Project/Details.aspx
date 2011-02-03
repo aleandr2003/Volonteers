@@ -15,10 +15,16 @@
         <%= Model.Motto %>
     </div>
     <div class="display-label">
-        <%= Html.LabelFor(m => m.Date) %>
+        <%= Html.LabelFor(m => m.StartDate) %>
     </div>
     <div class="display-field">
-        <%= Model.Date.ToShortDateString() %>
+        <%= Model.StartDate.ToShortDateString()%> - <%= Model.StartDate.Hour%> : <%= Model.StartDate.Minute%>
+    </div>
+    <div class="display-label">
+        <%= Html.LabelFor(m => m.EndDate) %>
+    </div>
+    <div class="display-field">
+        <%= Model.EndDate.ToShortDateString()%> - <%= Model.EndDate.Hour%> : <%= Model.EndDate.Minute%>
     </div>
     <div class="display-label">
         <%= Html.LabelFor(m => m.Description) %>

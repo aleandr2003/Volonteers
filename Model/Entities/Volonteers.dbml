@@ -84,7 +84,8 @@
       <Column Name="Motto" Type="System.String" DbType="VarChar(140)" CanBeNull="true" />
       <Column Name="OwnerPersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="Project_Vacancy" Member="Vacancies" ThisKey="Id" OtherKey="ProjectId" Type="Vacancy" />
     </Type>
   </Table>

@@ -22,16 +22,12 @@ namespace VolonteersPortal.Models
         public string Description { get; set; }
 
         [Required]
-        [DisplayName("День")]
-        public int Day { get; set; }
+        [DisplayName("Начало")]
+        public DateTime StartDate { get; set; }
 
         [Required]
-        [DisplayName("Месяц")]
-        public int Month { get; set; }
-
-        [Required]
-        [DisplayName("Год")]
-        public int Year { get; set; }
+        [DisplayName("Окончание")]
+        public DateTime EndDate { get; set; }
     }
 
     public class ProjectDetailsModel
@@ -45,8 +41,11 @@ namespace VolonteersPortal.Models
         [DisplayName("Описание")]
         public string Description { get; set; }
 
-        [DisplayName("Дата")]
-        public DateTime Date { get; set; }
+        [DisplayName("Начало")]
+        public DateTime StartDate { get; set; }
+
+        [DisplayName("Окончание")]
+        public DateTime EndDate { get; set; }
     }
     #endregion
 }

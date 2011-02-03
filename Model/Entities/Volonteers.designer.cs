@@ -1796,7 +1796,9 @@ namespace Models.Entities
 		
 		private string _Description;
 		
-		private System.DateTime _Date;
+		private System.DateTime _StartDate;
+		
+		private System.DateTime _EndDate;
 		
 		private EntitySet<Vacancy> _Vacancies;
 		
@@ -1814,8 +1816,10 @@ namespace Models.Entities
     partial void OnOwnerPersonIdChanged();
     partial void OnDescriptionChanging(string value);
     partial void OnDescriptionChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.DateTime value);
+    partial void OnEndDateChanged();
     #endregion
 		
 		public Project()
@@ -1924,22 +1928,42 @@ namespace Models.Entities
 			}
 		}
 		
-		[Column(Storage="_Date", DbType="DateTime NOT NULL")]
-		public System.DateTime Date
+		[Column(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
 		{
 			get
 			{
-				return this._Date;
+				return this._StartDate;
 			}
 			set
 			{
-				if ((this._Date != value))
+				if ((this._StartDate != value))
 				{
-					this.OnDateChanging(value);
+					this.OnStartDateChanging(value);
 					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_EndDate", DbType="DateTime NOT NULL")]
+		public System.DateTime EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
 				}
 			}
 		}
