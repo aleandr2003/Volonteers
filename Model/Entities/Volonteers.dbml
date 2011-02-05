@@ -9,6 +9,7 @@
       <Column Name="NeededNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IsApprovalRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="ProjectId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vacancy_PersonVacancy" Member="PersonVacancies" ThisKey="Id" OtherKey="VacancyId" Type="PersonVacancy" />
       <Association Name="Project_Vacancy" Member="Project" ThisKey="ProjectId" OtherKey="Id" Type="Project" IsForeignKey="true" />
     </Type>
   </Table>
@@ -75,6 +76,7 @@
       <Association Name="Person_Message" Member="Messages" ThisKey="Id" OtherKey="AuthorId" Type="Message" />
       <Association Name="Person_Message1" Member="Messages1" ThisKey="Id" OtherKey="RecipientId" Type="Message" />
       <Association Name="Person_Comment" Member="Comments" ThisKey="Id" OtherKey="AuthorId" Type="Comment" />
+      <Association Name="Person_PersonVacancy" Member="PersonVacancies" ThisKey="Id" OtherKey="PersonId" Type="PersonVacancy" />
     </Type>
   </Table>
   <Table Name="dbo.Projects" Member="Projects">
@@ -87,6 +89,14 @@
       <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="Project_Vacancy" Member="Vacancies" ThisKey="Id" OtherKey="ProjectId" Type="Vacancy" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PersonVacancy" Member="PersonVacancies">
+    <Type Name="PersonVacancy">
+      <Column Name="PersonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VacancyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Person_PersonVacancy" Member="Person" ThisKey="PersonId" OtherKey="Id" Type="Person" IsForeignKey="true" />
+      <Association Name="Vacancy_PersonVacancy" Member="Vacancy" ThisKey="VacancyId" OtherKey="Id" Type="Vacancy" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

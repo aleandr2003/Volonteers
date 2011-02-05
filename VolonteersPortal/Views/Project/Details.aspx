@@ -18,13 +18,13 @@
         <%= Html.LabelFor(m => m.StartDate) %>
     </div>
     <div class="display-field">
-        <%= Model.StartDate.ToShortDateString()%> - <%= Model.StartDate.Hour%> : <%= Model.StartDate.Minute%>
+        <%= Model.StartDate.ToString("d MMMM yyyy - HH:mm")%>
     </div>
     <div class="display-label">
         <%= Html.LabelFor(m => m.EndDate) %>
     </div>
     <div class="display-field">
-        <%= Model.EndDate.ToShortDateString()%> - <%= Model.EndDate.Hour%> : <%= Model.EndDate.Minute%>
+        <%= Model.EndDate.ToString("d MMMM yyyy - HH:mm")%>
     </div>
     <div class="display-label">
         <%= Html.LabelFor(m => m.Description) %>

@@ -23,6 +23,8 @@ namespace VolonteersPortal.Controllers
 
         public ActionResult Index()
         {
+            List<Project> all = projectRepository.GetFiltered(p => true).OrderByDescending(p => p.StartDate).ToList();
+            ViewData["projects"] = all;
             return View();
         }
 

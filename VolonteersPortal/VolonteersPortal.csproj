@@ -118,9 +118,11 @@
     <Content Include="Views\Person\Details.aspx" />
     <Content Include="Views\Project\Create.aspx" />
     <Content Include="Views\Project\Details.aspx" />
+    <Content Include="Views\Project\Index.aspx" />
     <Content Include="Views\Shared\CompletedProjects.ascx" />
     <Content Include="Views\Shared\ImmediateProjects.ascx" />
     <Content Include="Views\Shared\ProjectShort.ascx" />
+    <Content Include="Views\Shared\ProjectShortCompleted.ascx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.4.1.js" />

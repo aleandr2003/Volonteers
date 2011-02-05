@@ -9,4 +9,7 @@
    <% Html.RenderPartial("ImmediateProjects", Model.ImmediateProjects);%> 
    <% Html.RenderPartial("CompletedProjects", Model.CompletedProjects,
           new ViewDataDictionary { { "CompletedProjectsNumber", Model.CompletedProjectsNumber } });%>
+   <div>
+   <%= Html.ActionLink("Все проекты", "Index", "Project")%>
+   </div>       
 </asp:Content>

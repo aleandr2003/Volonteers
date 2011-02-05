@@ -9,7 +9,8 @@ namespace Models.DataClasses
     {
         public int Id;
         public string Name;
-        public DateTime Date;
+        public DateTime StartDate;
+        public DateTime EndDate;
         public int VolonteersNumber;
         public int AuthorId;
         public string AuthorName;

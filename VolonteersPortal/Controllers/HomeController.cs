@@ -12,9 +12,14 @@ using Models.Repositories;
 
 namespace VolonteersPortal.Controllers
 {
+    
+
     [HandleError]
     public class HomeController : Controller
     {
+        private const int immediateDays = 14;
+
+        private const int projectsToShow = 3;
         public IProjectRepository projectRepository;
 
         public HomeController(IProjectRepository pRep)
@@ -24,13 +29,19 @@ namespace VolonteersPortal.Controllers
 
         public ActionResult Index()
         {
-            List<ProjectShortData> immediateProjects = new List<ProjectShortData>();
-            List<ProjectShortData> completedProjects = new List<ProjectShortData>();
-            int completedProjectsTotal = 1;
+            List<ProjectShortData> immediateProjects = 
+                projectRepository.GetFilteredData(
+                    p => 
+                        p.EndDate > DateTime.Now 
+                        &&
+                        p.StartDate < DateTime.Now.AddDays(immediateDays)).Take(projectsToShow).ToList();
+            List<ProjectShortData> recentProjects =
+                projectRepository.GetFilteredData(p => p.EndDate < DateTime.Now).Take(projectsToShow).ToList();
+            int completedProjectsTotal = projectRepository.GetFiltered(p => p.EndDate < DateTime.Now).Count();
             HomePageModel model = new HomePageModel
             {
                 ImmediateProjects = immediateProjects,
-                CompletedProjects = completedProjects,
+                CompletedProjects = recentProjects,
                 CompletedProjectsNumber = completedProjectsTotal
             };
 

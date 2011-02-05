@@ -7,7 +7,7 @@
                        "Project") %>
     </h1>
     <% foreach(ProjectShortData projectdata in Model){%>
-        <% Html.RenderPartial("ProjectShort", projectdata); %>
+        <% Html.RenderPartial("ProjectShortCompleted", projectdata); %>
     <%}%>      
     <%= Html.ActionLink(String.Format("ещё {0} законченных проекта",
                         (int)ViewData["CompletedProjectsNumber"] - Model.Count()), 

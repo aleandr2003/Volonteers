@@ -138,6 +138,14 @@ namespace Models.Entities
 				return this.GetTable<Project>();
 			}
 		}
+		
+		public System.Data.Linq.Table<PersonVacancy> PersonVacancies
+		{
+			get
+			{
+				return this.GetTable<PersonVacancy>();
+			}
+		}
 	}
 	
 	[Table(Name="dbo.Vacancy")]
@@ -2011,6 +2019,51 @@ namespace Models.Entities
 		{
 			this.SendPropertyChanging();
 			entity.Project = null;
+		}
+	}
+	
+	[Table(Name="dbo.PersonVacancy")]
+	public partial class PersonVacancy
+	{
+		
+		private int _PersonId;
+		
+		private int _VacancyId;
+		
+		public PersonVacancy()
+		{
+		}
+		
+		[Column(Storage="_PersonId", DbType="Int NOT NULL")]
+		public int PersonId
+		{
+			get
+			{
+				return this._PersonId;
+			}
+			set
+			{
+				if ((this._PersonId != value))
+				{
+					this._PersonId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_VacancyId", DbType="Int NOT NULL")]
+		public int VacancyId
+		{
+			get
+			{
+				return this._VacancyId;
+			}
+			set
+			{
+				if ((this._VacancyId != value))
+				{
+					this._VacancyId = value;
+				}
+			}
 		}
 	}
 }
